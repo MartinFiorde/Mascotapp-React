@@ -8,17 +8,17 @@ export default class Main extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { mascotas : [] };
+        this.state = { mascotas: [] };
 
         console.log("1-Hola desde el constructor");
     };
 
     componentDidMount() {
-        
+
         // LINEAS 19,20,21,47 anuladas, para que el componente "cards" tome directamente la información de la API con el hook "useEffect"
         // RaMService.getAllCharacters()
-        // .then((data) => this.setState({mascotas: data.results}))
-        // .catch((error) => console.log(error))
+        //     .then((data) => this.setState({ mascotas: data.results }))
+        //     .catch((error) => console.log(error))
 
         console.log("3-Hola desde el componenDidMount");
     };
@@ -28,7 +28,7 @@ export default class Main extends Component {
         return (
             <div>
                 <main>
-                    
+
                     {/* CONTAINER PRINCIPAL */}
                     <section className="py-5 text-center container">
                         <div className="row py-lg-5">
@@ -44,7 +44,7 @@ export default class Main extends Component {
                     </section>
 
                     <Cards />
-                    {/* <Cards mascotas = {this.state.mascotas}/> */}
+                    {/* <Cards mascotas={this.state.mascotas} /> */}
 
                 </main>
             </div>
