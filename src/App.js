@@ -5,21 +5,24 @@ import './App.css';
 import { Footer } from './components/public/Footer';
 import Main from './components/public/Main';
 import { Navbar } from './components/public/Navbar';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Detail } from './components/public/Detail';
+import { UserForm } from './components/public/UserForm';
 
 // APP engloba componentes
 function App() {
   return (
     <div>
-
-      {/* -------------- NAVBAR ------------- */}
       <Navbar />
-
-      {/* -------------- MAIN ------------- */}
-      <Main />
-
-      {/* -------------- FOOTER ------------- */}
+      {/* Agregamos el browserRouter directamente en el index.js */}
+      {/* <BrowserRouter> */}
+        <Routes>
+          <Route exact path={""} element={ <Main />} />
+          <Route path={"/details/:id"} element={<Detail/>} />
+          <Route path={"/user-form"} element={<UserForm/>} />
+        </Routes>
+      {/* </BrowserRouter> */}
       <Footer />
-
     </div>
   );
 }
